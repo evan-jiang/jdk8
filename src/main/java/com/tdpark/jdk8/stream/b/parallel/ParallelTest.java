@@ -23,41 +23,5 @@ public class ParallelTest {
         PrintUtils.split();
         //并行流
         list.parallelStream().forEach(System.out::print);
-        PrintUtils.split();
-        int total = 50000000;
-        long start = System.currentTimeMillis();
-        for (int idx = 0; idx < total; idx++) {
-            filter1(list);
-        }
-        System.out.println(System.currentTimeMillis() - start);
-        start = System.currentTimeMillis();
-        for (int idx = 0; idx < total; idx++) {
-            //并行流在做过滤的时候比串行流快
-            filter2(list);
-        }
-        System.out.println(System.currentTimeMillis() - start);
     }
-
-    /**
-     * 串行流过滤
-     * 
-     * @param list
-     */
-    public static void filter1(List<Student> list) {
-        list.stream().filter((s) -> {
-            return true;
-        });
-    }
-
-    /**
-     * 并行流过滤
-     * 
-     * @param list
-     */
-    public static void filter2(List<Student> list) {
-        list.parallelStream().filter((s) -> {
-            return true;
-        });
-    }
-
 }
