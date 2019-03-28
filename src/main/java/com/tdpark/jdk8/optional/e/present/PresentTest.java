@@ -10,7 +10,7 @@ import com.tdpark.jdk8.optional.Teacher;
  * 
  * @author jiangyongsheng 2019年3月27日 下午6:23:46
  */
-public class PresentTeset {
+public class PresentTest {
 
     public static void main(String[] args) {
 
